@@ -1,0 +1,10 @@
+
+tasks:
+  - init: |
+      echo 'TODO: build project'
+    command: |
+      cd compose && docker-compose up
+
+vscode:
+  extensions:
+    - formulahendry.code-runner

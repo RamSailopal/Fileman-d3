@@ -1,0 +1,6 @@
+{
+    "code-runner.executorMap": {
+        "html": "docker exec -i httpd /bin/bash -c '/usr/local/Fileman-d3/compile.sh'",
+    }
+}
+
