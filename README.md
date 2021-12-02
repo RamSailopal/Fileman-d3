@@ -2,11 +2,13 @@
 
 This repo allows the development of d3 charts against FileMan.
 
+![Alt text](d3chart.JPG?raw=true "d3 chart View")
+
 It also contains a config file to get a stack up and running quickly in Gitpod
 
 # Gitpod
 
-![Alt text](d3ide.jpeg?raw=true "Gitpod View")
+![Alt text](d3ide.JPG?raw=true "Gitpod View")
 
 To run a Gitpod with this repo:
 
