@@ -26,7 +26,7 @@ services:
    ports:
       - 8080:8080
    environment:
-      - NODE_FMQLADD=$NODEFMQLADD
+      - NODE_FMQLADD=$NODE_FMQLADD
    volumes:
       - ../htdocs:/home/htdocs/
       - ../startup:/usr/local/Fileman-d3
