@@ -3,7 +3,7 @@ tasks:
   - init: |
       echo 'TODO: build project'
     command: |
-      cd compose && docker-compose up
+      export NODE_FMQLADD="https://9100-${GITPOD_WORKSPACE_URL##https://}" && cd compose && docker-compose up
 
 vscode:
   extensions:
