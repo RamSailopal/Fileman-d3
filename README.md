@@ -14,5 +14,14 @@ To run a Gitpod with this repo:
 
 1) Create a free/paid Gitpod account - https://www.gitpod.io/
 2) Log into the account
-3) Open a new browser tab and add **gitpod.io/#https://github.com/RamSailopal/Fileman-d3** to the address - This will create a new Gitpod cloud instance.
-4) Step 3 is for sample only. If you want to make changes to your own repo, first fork this repo and then add that repo after the **gitpod.io/#** prefix to create a new gitpod instance.
+3) Open a new browser tab and add **gitpod.io/#https://github.com/RamSailopal/FileManjs-gitpod** to the address - This will create a new Gitpod cloud instance.
+4) Due to blocked cross origin requests, ports 8080 and 9100 need to be made public in Gitpod.
+5) Due to blocked cross origin requests, A CORS browser add-on also needs to be added and enabled
+   https://addons.mozilla.org/en-GB/firefox/addon/cors-everywhere/
+   
+   https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
+6) Open a browser session on port 8080 (the globe icon) and this will display a react table displaying the output from the FileMan query **SELECT 9_6 LIMIT 100**
+
+# Getting Started
+
+Code is created in the **htdocs** directory when changes are made, execute the Run Code addon (play button). Changes should then be reflected in the browser running against server port 8080.
