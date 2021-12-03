@@ -25,3 +25,9 @@ To run a Gitpod with this repo:
 # Getting Started
 
 Code is created in the **htdocs** directory when changes are made, execute the Run Code addon (play button). Changes should then be reflected in the browser running against server port 8080.
+
+# Run locally with docker-compose
+
+    cd compose
+    export NODE_FMQLADD="http://<ipaddressofdockerserver>:9100"
+    docker-compose up
