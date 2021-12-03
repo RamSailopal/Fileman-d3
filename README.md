@@ -20,7 +20,7 @@ To run a Gitpod with this repo:
    https://addons.mozilla.org/en-GB/firefox/addon/cors-everywhere/
    
    https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
-6) Open a browser session on port 8080 (the globe icon) and this will display a react table displaying the output from the FileMan query **SELECT 9_6 LIMIT 100**
+6) Open a browser session on port 8080 (the globe icon) and this will display a list of d3 charts generated from FileMan
 
 # Getting Started
 
