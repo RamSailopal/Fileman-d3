@@ -359,7 +359,7 @@ function processdata() {
     res=JSON.parse(newj);
     var data = d3.nest().key(function(d) { return d.state }).key(function(d) { return d.city }).key(function(d) { return d.patients }).entries(res);
     console.log(data);
-    main({title: "Patients in each State/City"}, {key: "State", values: data});
+    main({title: "Patients in each State/City"}, {key: "City", values: data});
 }
 
 </script>
