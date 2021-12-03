@@ -19,7 +19,8 @@ To run a Gitpod with this repo:
 5) Due to blocked cross origin requests, A CORS browser add-on also needs to be added and enabled
    https://addons.mozilla.org/en-GB/firefox/addon/cors-everywhere/
    
-   https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
+   https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en
+   
 6) Open a browser session on port 8080 (the globe icon) and this will display a list of d3 charts generated from FileMan
 
 # Getting Started
