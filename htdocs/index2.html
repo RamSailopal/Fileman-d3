@@ -325,20 +325,25 @@ if (window.location.hash === "") {
         if (!err) {
             var JSONdat=[];
             var manuf=[];
+            var manuf1=[];
             var indres=""
             for (var i = 0; i < res.results.length; i++) {
                indres=manuf[res.results[i].manufacturer.label]
                if (typeof manuf[res.results[i].manufacturer.label] === 'undefined') {
-                    manuf[res.results[i].manufacturer.label]=0
+                    manuf[res.results[i].manufacturer.label]=0;
+                    manuf1[res.results[i].manufacturer.label]=[];
                }
                manuf[res.results[i].manufacturer.label] +=1;
+               manuf1[res.results[i].manufacturer.label].push(res.results[i].trade_name.value)
             }
             for (manf in manuf) {
                JSONdat.push({ manufacturer: manf.toString().replace("DRUG MANUFACTURER/",""),
-                              value: manuf[manf]});
+                              value: manuf[manf],
+                              drugs: manuf1[manf]});
 
 	    }
             newj = JSON.stringify(JSONdat);
+            console.log(newj);
         }
         processdata();
     });
@@ -348,7 +353,7 @@ if (window.location.hash === "") {
 function processdata() {
     console.log(newj);
     res=JSON.parse(newj);
-    var data = d3.nest().key(function(d) { return d.manufacturer }).entries(res);
+    var data = d3.nest().key(function(d) { return d.manufacturer }).key(function(d) { return d.drugs }).entries(res);
     console.log(data);
     main({title: "Drugs by manufacturer"}, {key: "Manufacturers", values: data});
 }
