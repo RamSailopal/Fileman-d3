@@ -325,19 +325,23 @@ if (window.location.hash === "") {
         if (!err) {
             var JSONdat=[];
             var county=[];
+            var county1=[];
             var indres=""
             for (var i = 0; i < res.results.length; i++) {
                indres=county[res.results[i].state.sameAsLabel]
                if (typeof county[res.results[i].state.sameAsLabel] === 'undefined') {
-                    county[res.results[i].state.sameAsLabel]=0
+                    county[res.results[i].state.sameAsLabel]=0;
+                    county1[res.results[i].state.sameAsLabel]=[];
                }
                console.log(county[res.results[i].state.sameAsLabel]);
                county[res.results[i].state.sameAsLabel] +=1;
+               county1[res.results[i].state.sameAsLabel].push(res.results[i].name.value);
             }
             for (cownty in county) {
                console.log(cownty)
-               JSONdat.push({ county: cownty,
-                              value: county[cownty]});
+               JSONdat.push({ state: cownty,
+                              value: county[cownty],
+                              counties: county1[cownty]});
 
 	    }
             newj = JSON.stringify(JSONdat);
@@ -350,7 +354,7 @@ if (window.location.hash === "") {
 function processdata() {
     console.log(newj);
     res=JSON.parse(newj);
-    var data = d3.nest().key(function(d) { return d.county; }).entries(res);
+    var data = d3.nest().key(function(d) { return d.state; }).key(function(d) { return d.counties; }).entries(res);
     console.log(data);
     main({title: "Counties in each state"}, {key: "Counties", values: data});
 }
