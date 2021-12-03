@@ -32,3 +32,9 @@ Code is created in the **htdocs** directory when changes are made, execute the R
     cd compose
     export NODE_FMQLADD="http://<ipaddressofdockerserver>:9100"
     docker-compose up
+    
+ # Further References
+ 
+ http://vistadataproject.info/
+ 
+ https://d3js.org/
