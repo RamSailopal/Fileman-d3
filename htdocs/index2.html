@@ -321,24 +321,28 @@ function main(o, data) {
 }
 
 if (window.location.hash === "") {
-    d3.json("$NODE_FMQLADD" + "/fmqlEP?fmql=DESCRIBE%2050_67%20LIMIT%20100", function(err, res) {
+    d3.json("$NODE_FMQLADD" + "/fmqlEP?fmql=DESCRIBE%2050_67%20LIMIT%201000", function(err, res) {
         if (!err) {
             var JSONdat=[];
             var manuf=[];
             var manuf1=[];
+            var manuf2=[];
             var indres=""
             for (var i = 0; i < res.results.length; i++) {
                indres=manuf[res.results[i].trade_name.value]
                if (typeof manuf[res.results[i].trade_name.value] === 'undefined') {
                     manuf[res.results[i].trade_name.value]=0;
                     manuf1[res.results[i].trade_name.value]=[];
+                    manuf2[res.results[i].trade_name.value]=[];
                }
                manuf[res.results[i].trade_name.value] +=1;
-               manuf1[res.results[i].trade_name.value]=res.results[i].manufacturer.label
+               manuf1[res.results[i].trade_name.value]=res.results[i].manufacturer.label;
+               manuf2[res.results[i].trade_name.value]=res.results[i].package_type.label;
             }
             for (manf in manuf) {
                JSONdat.push({ manufacturer: manuf1[manf].toString().replace("DRUG MANUFACTURER/",""),
                               value: manuf[manf],
+                              type: manuf2[manf].toString().replace("PACKAGE TYPE/",""),
                               drug: manf});
 
 	    }
@@ -353,9 +357,9 @@ if (window.location.hash === "") {
 function processdata() {
     console.log(newj);
     res=JSON.parse(newj);
-    var data = d3.nest().key(function(d) { return d.manufacturer }).key(function(d) { return d.drug }).entries(res);
+    var data = d3.nest().key(function(d) { return d.type }).key(function(d) { return d.manufacturer }).key(function(d) { return d.drug }).entries(res);
     console.log(data);
-    main({title: "Drugs by manufacturer"}, {key: "Manufacturers", values: data});
+    main({title: "Drugs by Type/Manufacturer"}, {key: "Drugs", values: data});
 }
 
 </script>
