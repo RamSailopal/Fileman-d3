@@ -24,7 +24,7 @@ To run a Gitpod with this repo:
 6) Open a browser session on port 8080 (the globe icon) and this will display a list of d3 charts generated from FileMan
 
 
-![Alt text](d3chart.webp?raw=true "d3 chart View")
+![Alt text](d3charts.webp?raw=true "d3 chart View")
 
 # Getting Started
 
