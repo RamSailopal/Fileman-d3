@@ -21,9 +21,13 @@ To run a Gitpod with this repo:
    
    https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en
    
-   With the firefox addon, ensure that the cors header is enabled once installed as in the image below:
+   With the firefox addon, ensure that the CORS header is enabled once installed as in the image below:
    
    ![Alt text](corsenabled.png?raw=true "CORS enabled")
+   
+   This contrasts to when the CORS header is disabled as in the image below:
+   
+   ![Alt text](corsdisabled.png?raw=true "CORS disabled")
    
 6) Open a browser session on port 8080 (the globe icon) and this will display a list of d3 charts generated from FileMan
 
